@@ -1,0 +1,11 @@
+<div class="center" *ngIf="loggedInUser">
+    <button mat-button (click)="changePhoto('left')" id="leftButton"><b>&larr;</b></button>
+    <div class="image">
+        <img src="{{selectedPhoto.url}}">
+        <br>
+        <span>
+            {{selectedPhoto.title}}
+        </span>
+    </div>
+    <button mat-button (click)="changePhoto('right')" id="rightButton"><b>&rarr;</b></button>
+</div>

@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<mat-card class="mainCard" *ngIf="loggedInUser">
+    <mat-card-title class="mainTitle">
+        Foto Albumi {{loggedInUser.name}}
+        <button style="float: right;" class="fa fa-bars" (click)="listView()"></button>
+        <button style="float: right;" class="fa fa-th-large" (click)="gridView()"></button>
+    </mat-card-title>
+    <mat-card-content>
+        <div class="grid-container" *ngIf="grid">
+            <div class="grid-item" *ngFor="let album of albums">
+                <a (click)="goToAlbum(album)">
+                    <img src="{{album.albumUrl}}">
+                    <h3>{{album.title}}</h3>
+                    <p>kreirao: {{loggedInUser.name}}</p>
+                </a>
+            </div>
+        </div>
+        <ul *ngIf="list" >
+            <li *ngFor="let album of albums" class="listAlbums">
+                <a (click)="goToAlbum(album)">
+                <div>
+                    <img src="{{album.albumUrl}}">
+                    <h3>{{album.title}}</h3><br>
+                    <p>kreirao: {{loggedInUser.name}}</p>
+                </div>
+                </a>
+            </li>
+        </ul>
+    </mat-card-content>
+</mat-card>

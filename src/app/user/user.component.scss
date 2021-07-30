@@ -1,0 +1,76 @@
+.mainCard{
+    width: 70%;
+    top: 100px;
+    left: 200px;    
+}
+
+.mainTitle{
+    overflow: hidden;
+    height: 60px;
+}
+
+    button {
+        background: white;
+        color: black;
+        border: none; 
+        cursor: pointer;
+    }
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.grid-item img{
+    height:200px;
+    width:300px;
+}
+
+.grid-item h3{
+    font-size: 22px;
+}
+
+.grid-item p{
+    color: gray;
+}
+
+.listAlbums {
+    width: 100%;
+    list-style-type: none;
+    display: inline-block;
+}
+    
+.listAlbums div img
+{
+    float:left;
+    height: 200px;
+    width: 300px;
+    padding-bottom: 20px;
+}
+
+.listAlbums div h3 {
+    text-align: left; 
+    display: flex;
+    padding: 15px;
+    font-size: 22px;
+}
+
+.listAlbums div p{
+    text-align: left; 
+    display: flex;
+    padding: 15px;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+
+
+
+
+

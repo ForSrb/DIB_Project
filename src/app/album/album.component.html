@@ -1,0 +1,75 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<mat-card class="returnCard" *ngIf="loggedInUser">
+    <a (click)="returnToAlbums()"><b>&larr; povratak</b></a>
+</mat-card>
+
+<mat-card class="mainCard" *ngIf="photos.length > 0 && loggedInUser">
+    <mat-card-title class="mainTitle">
+        <div>
+            <span>{{album.title}}</span>
+            <button style="float: right;" class="fa fa-bars" (click)="listView()"></button>
+            <button style="float: right;" class="fa fa-th-large" (click)="gridView()"></button>
+        </div>
+        <form (submit)="search(searchForm)" #searchForm="ngForm">
+            <button class="fa fa-search" type="submit"></button>
+            <mat-form-field>
+                <input matInput type="text" 
+                name="photo"
+                ngModel
+                placeholder="Pretrazi"
+                #photoInput="ngModel"
+                >
+            </mat-form-field>
+        </form>
+
+    </mat-card-title>
+    <mat-card-content>
+        <div class="grid-container" *ngIf="grid">
+            <div class="grid-item" *ngFor="let photo of photos">
+                <a (click)="openPhoto(photo)"><img src="{{photo.url}}"></a>
+                <h3><a (click)="openPhoto(photo)">{{photo.title}}</a>
+                    <button class="fa fa-trash-o" (click)="openDialog(photo)"></button>
+                </h3>   
+            </div>
+        </div>
+        <div  *ngIf="list">
+        <ul>
+            <li *ngFor="let photo of photos" class="listAlbums">
+                <div>
+                    <a (click)="openPhoto(photo)"><img src="{{photo.url}}"></a>
+                    <a (click)="openPhoto(photo)"><h3>{{photo.title}}</h3></a>
+                    <br>
+                    <h3><button class="fa fa-trash-o" (click)="openDialog(photo)"></button></h3>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </mat-card-content>
+</mat-card>
+<mat-card class="mainCard" *ngIf="photos.length == 0 && loggedInUser">
+    <mat-card-title class="mainTitle">
+        <div>
+            <span>{{album.title}}</span>
+            <button style="float: right;" class="fa fa-bars" (click)="listView()"></button>
+            <button style="float: right;" class="fa fa-th-large" (click)="gridView()"></button>
+        </div>
+        <form (submit)="search(searchForm)" #searchForm="ngForm">
+            <button class="fa fa-search" type="submit"></button>
+            <mat-form-field>
+                <input matInput type="text" 
+                name="photo"
+                ngModel
+                placeholder="Pretrazi"
+                #photoInput="ngModel"
+                >
+            </mat-form-field>
+        </form>
+
+    </mat-card-title>
+    <mat-card-content>
+        <b>Nema slika!</b>
+    </mat-card-content>
+</mat-card>

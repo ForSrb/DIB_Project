@@ -1,0 +1,99 @@
+.returnCard{
+    width: 70%;
+    left: 200px;
+}
+
+.mainCard{
+    width: 70%;
+    top: 100px;
+    left: 200px;    
+}
+
+.mainTitle{
+    overflow: hidden;
+    height: 110px;
+}
+
+    button {
+        background: white;
+        color: black;
+        border: none; 
+        cursor: pointer;
+    }
+
+form {
+    padding-top: 10px;
+}
+
+form button{
+    background: white;
+    color: black;
+    padding: 10px;
+    border: 1px solid grey;
+    border: none; 
+    cursor: pointer;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.grid-item img{
+    height:200px;
+    width:300px;
+}
+
+.grid-item h3{
+    width: 90%;
+    font-size: 22px;
+    float: left;
+}
+
+.grid-item button{
+    float: right;
+    background: white;
+    color: gray;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.listAlbums {
+    width: 100%;
+    list-style-type: none;
+    margin-left:0px;
+    padding-left:0px;
+    display: inline-block;
+}
+    
+.listAlbums div img
+{
+    float:left;
+    height: 200px;
+    width: 300px;
+    padding-bottom: 20px;
+}
+
+.listAlbums div h3 {
+    text-align: left; 
+    display: flex;
+    padding: 15px;
+    font-size: 22px;
+}
+
+.listAlbums div button{
+    float: left;
+    background: white;
+    color: gray;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
